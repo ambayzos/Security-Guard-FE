@@ -4,17 +4,32 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Button btnCallPolice = findViewById(R.id.btnCall);
+        btnCallPolice.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == R.id.btnCall){
+            String phoneNumber = "110";
+            Intent intenDial = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:"+phoneNumber));
+            startActivity(intenDial);
+        }
     }
 
     @Override
@@ -38,4 +53,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
     }
+
+
 }

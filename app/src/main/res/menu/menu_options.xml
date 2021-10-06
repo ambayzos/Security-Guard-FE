@@ -4,11 +4,9 @@
 
     <group android:menuCategory="container">
         <item android:id="@+id/menu_account"
-            android:title="@string/menu_account"
-            android:icon = "@drawable/ic_baseline_account_circle_24"
-            app:showAsAction="always" />
+            android:title="@string/menu_account"/>
         <item android:id="@+id/menu_logout"
-            android:title="@string/menu_logout" />
+            android:title="@string/menu_logout"/>
     </group>
 
 </menu>
