@@ -7,6 +7,7 @@
     android:background="#FFFFFF"
     tools:context=".LoginActivity">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="317dp"
@@ -93,5 +94,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtPassLogin"
         app:layout_constraintVertical_bias="0.708" />
+    
 
 </androidx.constraintlayout.widget.ConstraintLayout>

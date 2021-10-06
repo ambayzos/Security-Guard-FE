@@ -35,7 +35,7 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserEntity user = UserEntity();
+                UserEntity user = new UserEntity();
                 user.setEmail(txtEmailLogin.getText().toString());
                 user.setKataSandi(txtPassLogin.getText().toString());
 

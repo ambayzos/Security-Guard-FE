@@ -38,7 +38,8 @@ public class RegistrasiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UserEntity user =new UserEntity();
-                user.setNik(txtNik.getText().toString());
+                user.setNik(Long.parseLong(txtNik.getText().toString()));
+                //user.setNik(txtNik.getText().toString());
                 user.setNama(txtNama.getText().toString());
                 user.setTtl(txtTtl.getText().toString());
                 user.setEmail(txtEmail.getText().toString());
@@ -74,16 +75,26 @@ public class RegistrasiActivity extends AppCompatActivity {
 
     }
 
-    private boolean validate() {
-
-        if(!txtPass.equals(txtRepass)){
-            Toast.makeText(RegistrasiActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();
-            return false;
-        else
+    private  boolean validate(){
+        if (!txtPass.equals(txtPass)){
+             Toast.makeText(RegistrasiActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();
+              return false;
+        }else {
             Toast.makeText(RegistrasiActivity.this,"Password matching",Toast.LENGTH_SHORT).show();
             return true;
         }
-});
+    }
 
-        }
+//    private boolean validate() {
+//
+//        if(!txtPass.equals(txtRepass)){
+//            Toast.makeText(RegistrasiActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();
+//            return false;
+//        else
+//            Toast.makeText(RegistrasiActivity.this,"Password matching",Toast.LENGTH_SHORT).show();
+//            return true;
+//        }
+//});
+//
+//        }
 }
