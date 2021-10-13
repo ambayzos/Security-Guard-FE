@@ -21,7 +21,7 @@
         app:srcCompat="@drawable/security" />
 
     <EditText
-        android:id="@+id/txtEmailLogin"
+        android:id="@+id/edtEmailLogin"
         android:layout_width="307dp"
         android:layout_height="48dp"
         android:background="@drawable/round_brown"
@@ -29,7 +29,7 @@
         android:drawablePadding="20dp"
         android:ems="10"
         android:hint="Email"
-        android:inputType="text"
+        android:inputType="textEmailAddress"
         android:textColorHint="#FFF7F7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/txtPassLogin"
+        android:id="@+id/edtPassLogin"
         android:layout_width="307dp"
         android:layout_height="48dp"
         android:background="@drawable/round_brown"
@@ -51,7 +51,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtEmailLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmailLogin"
         app:layout_constraintVertical_bias="0.051" />
 
     <Button
@@ -66,7 +66,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassLogin"
         app:layout_constraintVertical_bias="0.069" />
 
     <TextView
@@ -79,7 +79,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.321"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassLogin"
         app:layout_constraintVertical_bias="0.708" />
 
     <TextView
@@ -92,7 +92,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.74"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPassLogin"
+        app:layout_constraintTop_toBottomOf="@+id/edtPassLogin"
         app:layout_constraintVertical_bias="0.708" />
     
 

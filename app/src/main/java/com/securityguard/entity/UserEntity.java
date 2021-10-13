@@ -3,25 +3,39 @@ package com.securityguard.entity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 public class UserEntity implements Parcelable {
 
+    @SerializedName("id")
     private long id;
-    private long nik;
+    //private long nik;
+    @SerializedName("nama")
     private String nama;
+    @SerializedName("ttl")
     private String ttl;
+    @SerializedName("email")
     private String email;
+    @SerializedName("noTelp")
     private String noTelp;
+    @SerializedName("alamat")
     private String alamat;
+    @SerializedName("kataSandi")
     private String kataSandi;
+    @SerializedName("ulangKataSandi")
     private String ulangKataSandi;
+    @SerializedName("role")
     private String role;
+
+
+    public UserEntity() {
+    }
 
 
     @Override
@@ -32,7 +46,6 @@ public class UserEntity implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.id);
-        dest.writeLong(this.nik);
         dest.writeString(this.nama);
         dest.writeString(this.ttl);
         dest.writeString(this.email);
@@ -45,7 +58,6 @@ public class UserEntity implements Parcelable {
 
     public void readFromParcel(Parcel source) {
         this.id = source.readLong();
-        this.nik = source.readLong();
         this.nama = source.readString();
         this.ttl = source.readString();
         this.email = source.readString();
@@ -58,7 +70,6 @@ public class UserEntity implements Parcelable {
 
     protected UserEntity(Parcel in) {
         this.id = in.readLong();
-        this.nik = in.readLong();
         this.nama = in.readString();
         this.ttl = in.readString();
         this.email = in.readString();
@@ -69,7 +80,7 @@ public class UserEntity implements Parcelable {
         this.role = in.readString();
     }
 
-    public static final Parcelable.Creator<UserEntity> CREATOR = new Parcelable.Creator<UserEntity>() {
+    public static final Creator<UserEntity> CREATOR = new Creator<UserEntity>() {
         @Override
         public UserEntity createFromParcel(Parcel source) {
             return new UserEntity(source);

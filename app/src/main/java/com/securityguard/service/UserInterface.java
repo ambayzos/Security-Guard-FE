@@ -2,6 +2,8 @@ package com.securityguard.service;
 
 import com.securityguard.entity.UserEntity;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
