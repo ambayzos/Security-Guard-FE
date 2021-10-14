@@ -47,7 +47,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (response.isSuccessful()){
                             Intent iMainIntent = new Intent(LoginActivity.this, MainActivity.class);
                             iMainIntent.putExtra("token", response.body());
-                            Toast.makeText(LoginActivity.this, "Login berhasi;", Toast.LENGTH_LONG).show();
+                            Toast.makeText(LoginActivity.this, response.body(), Toast.LENGTH_LONG).show();
                             System.out.println(response.body());
                             startActivity(iMainIntent);
                         }else{

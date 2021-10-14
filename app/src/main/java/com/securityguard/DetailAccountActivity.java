@@ -12,24 +12,34 @@ import com.securityguard.utility.JWTUtil;
 import java.io.UnsupportedEncodingException;
 
 public class DetailAccountActivity extends AppCompatActivity {
-
+    public static final String SET_OBJ = "set_obj";
     UserEntity userTemp;
+    TextView txnama, txttempattgllahir, txnoTel, txemail, txtAlamat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_account);
 
-        TextView txtHello = findViewById(R.id.txtHello);
+         txnama = findViewById(R.id.txnama);
+         txttempattgllahir = findViewById(R.id.txttempattgl);
+         txnoTel = findViewById(R.id.noTel);
+         txemail = findViewById(R.id.txemail);
+         txtAlamat = findViewById(R.id.txAlamat);
 
-        String token ="Bearer "+getIntent().getStringExtra("token");
+        String token = getIntent().getStringExtra("token");
          Gson gson = new Gson();
         try {
             userTemp = gson.fromJson(JWTUtil.getBodyDecode(token), UserEntity.class);
         }catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }
-        txtHello.setText("hello"+userTemp.getNama());
+        txnama.setText(userTemp.getNama());
+        txttempattgllahir.setText(userTemp.getTtl());
+        txnoTel.setText(userTemp.getNoTelp());
+        txemail.setText(userTemp.getEmail());
+        txtAlamat.setText(userTemp.getAlamat());
+
 
     }
 }

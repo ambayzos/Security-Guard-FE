@@ -16,4 +16,6 @@ public interface UserInterface {
 
     @POST("/login")
     Call<String> loginUser(@Body UserEntity userEntity);
+
+
 }

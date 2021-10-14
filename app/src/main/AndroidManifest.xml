@@ -14,8 +14,7 @@
         android:theme="@style/Theme.SecurityGuard">
         <activity android:name=".DetailAccountActivity"></activity>
         <activity
-            android:name=".RegistrasiActivity"
-            android:exported="true" />
+            android:name=".RegistrasiActivity"/>
         <activity
             android:name=".LoginActivity"
             android:exported="true" >

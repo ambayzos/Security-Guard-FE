@@ -49,6 +49,7 @@ public class RegistrasiActivity extends AppCompatActivity {
                 UserEntity user = new UserEntity();
                 //user.setNik(Long.parseLong(txtNik.getText().toString()));
                 //user.setNik(txtNik.getText().toString());
+
                 user.setNama(txtNama.getText().toString());
                 user.setTtl(txtTtl.getText().toString());
                 user.setEmail(txtEmail.getText().toString());
@@ -57,24 +58,23 @@ public class RegistrasiActivity extends AppCompatActivity {
                 user.setKataSandi(txtPass.getText().toString());
                 user.setUlangKataSandi(txtRepass.getText().toString());
 
-
                 UserInterface userInterface = ApiClient.getRetrofit().create(UserInterface.class);
                 Call<String> call= userInterface.daftarUser(user);
 
                 call.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-                        Toast.makeText(RegistrasiActivity.this, "berhasil", Toast.LENGTH_LONG).show();
+                       // if (validate());
+                        Toast.makeText(RegistrasiActivity.this, "berhasil Register", Toast.LENGTH_LONG).show();
                         Intent i = new Intent(RegistrasiActivity.this, LoginActivity.class);
                         startActivity(i);
                         finish();
-
 
                     }
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(RegistrasiActivity.this,"Tidak Berhasil",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrasiActivity.this,"Tidak Berhasil Register",Toast.LENGTH_SHORT).show();
                         System.out.println(t);
                     }
                 });

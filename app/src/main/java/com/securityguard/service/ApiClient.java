@@ -10,7 +10,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class ApiClient {
 
     public static Retrofit retrofit;
-    public static final String URL = "http://b7ce-2001-448a-2082-ccef-685f-1750-cd2b-6147.ngrok.io";
+    public static final String URL = "https://c0c2-2001-448a-2082-124f-c984-4c7d-565c-81c2.ngrok.io";
 
     public static Retrofit getRetrofit() {
         Gson gson = new GsonBuilder().setLenient().create();
