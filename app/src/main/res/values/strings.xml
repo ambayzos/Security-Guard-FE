@@ -5,4 +5,6 @@
     <string name="this_fragment">Ini adalah menu account</string>
     <string name="menu_account">Account</string>
     <string name="menu_logout">Logout</string>
+    <string name="wrongpassword">password should be at least 8 character</string>
+    <string name="passworisnotcorrect">password does not match</string>
 </resources>

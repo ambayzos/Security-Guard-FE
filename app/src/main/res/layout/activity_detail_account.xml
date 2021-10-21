@@ -5,9 +5,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center"
-    android:padding="40dp"
+    android:paddingLeft="30sp"
+    android:paddingRight="30sp"
+    android:background="@color/white"
     tools:context=".DetailAccountActivity">
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="222dp"
+        android:layout_height="226dp"
+        android:layout_gravity="center"
+        android:src="@drawable/security" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,21 +23,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Nama                     :"
+            android:textColor="#FFFFFF"
             android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Nama : " />
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txnama"
-            android:layout_width="match_parent"
+            android:id="@+id/txtnama"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Nama" />
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Nama"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -38,21 +50,25 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Tempat Tgl Lahir : " />
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Tempat, Tgl Lahir :"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txttempattgl"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Tempat tglLahir" />
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Tempat tglLahir"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -61,20 +77,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="No Hp : " />
+            android:text="No.Hp                    :" />
 
         <TextView
             android:id="@+id/noTel"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             android:text="No Hp" />
     </LinearLayout>
 
@@ -84,20 +104,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Email : " />
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Email                     :"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/txemail"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             android:text="Email " />
     </LinearLayout>
 
@@ -107,20 +131,24 @@
         android:orientation="horizontal">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
-            android:text="Alamat : " />
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Alamat                  :"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
 
         <TextView
             android:id="@+id/txAlamat"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textStyle="bold"
-            android:textSize="14sp"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
             android:text="Alamat " />
     </LinearLayout>
 

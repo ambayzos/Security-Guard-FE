@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.google.gson.Gson;
 import com.securityguard.entity.UserEntity;
 import com.securityguard.service.ApiClient;
@@ -29,6 +31,8 @@ public class RegistrasiActivity extends AppCompatActivity {
 
     EditText txtNik,txtNama, txtTtl, txtEmail, txtNoTelp, txtAlamat, txtPass, txtRepass;
     Button btnDaftar;
+    AwesomeValidation awesomeValidation;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,12 +47,15 @@ public class RegistrasiActivity extends AppCompatActivity {
         txtRepass = findViewById(R.id.txtRepass);
         btnDaftar = findViewById(R.id.btnDaftar);
 
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        awesomeValidation.addValidation(this,R.id.txtPassLogin,".{8,}", R.string.wrongpassword);
+        awesomeValidation.addValidation(this, R.id.txtRepass, R.id.txtPassLogin, R.string.passworisnotcorrect);
+
         btnDaftar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UserEntity user = new UserEntity();
-                //user.setNik(Long.parseLong(txtNik.getText().toString()));
-                //user.setNik(txtNik.getText().toString());
+//                user.setNik(Long.parseLong(txtNik.getText().toString()));
 
                 user.setNama(txtNama.getText().toString());
                 user.setTtl(txtTtl.getText().toString());
@@ -64,17 +71,21 @@ public class RegistrasiActivity extends AppCompatActivity {
                 call.enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-                       // if (validate());
-                        Toast.makeText(RegistrasiActivity.this, "berhasil Register", Toast.LENGTH_LONG).show();
-                        Intent i = new Intent(RegistrasiActivity.this, LoginActivity.class);
-                        startActivity(i);
-                        finish();
+
+                        if (awesomeValidation.validate()) {
+                            Toast.makeText(com.securityguard.RegistrasiActivity.this, "Berhasil Register", Toast.LENGTH_LONG).show();
+                            Intent i = new Intent(com.securityguard.RegistrasiActivity.this, LoginActivity.class);
+                            startActivity(i);
+                            finish();
+                        } else {
+                            Toast.makeText(com.securityguard.RegistrasiActivity.this,"Tidak Berhasil Register",Toast.LENGTH_SHORT).show();
+                        }
 
                     }
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        Toast.makeText(RegistrasiActivity.this,"Tidak Berhasil Register",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegistrasiActivity.this,"Tidak Berhasil",Toast.LENGTH_SHORT).show();
                         System.out.println(t);
                     }
                 });
@@ -86,26 +97,4 @@ public class RegistrasiActivity extends AppCompatActivity {
 
     }
 
-    private  boolean validate(){
-        if (!txtPass.equals(txtRepass)){
-             Toast.makeText(RegistrasiActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();
-              return false;
-        }else {
-            Toast.makeText(RegistrasiActivity.this,"Password matching",Toast.LENGTH_SHORT).show();
-            return true;
-        }
-    }
-
-//    private boolean validate() {
-//
-//        if(!txtPass.equals(txtRepass)){
-//            Toast.makeText(RegistrasiActivity.this,"Password Not matching",Toast.LENGTH_SHORT).show();
-//            return false;
-//        else
-//            Toast.makeText(RegistrasiActivity.this,"Password matching",Toast.LENGTH_SHORT).show();
-//            return true;
-//        }
-//});
-//
-//        }
 }
