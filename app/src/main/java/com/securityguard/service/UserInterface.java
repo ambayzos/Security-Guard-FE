@@ -11,10 +11,10 @@ import retrofit2.http.POST;
 public interface UserInterface {
 
 
-    @POST("/register")
+    @POST("/user/register")
     Call<String> daftarUser(@Body UserEntity userEntity);
 
-    @POST("/login")
+    @POST("/user/login")
     Call<String> loginUser(@Body UserEntity userEntity);
 
 

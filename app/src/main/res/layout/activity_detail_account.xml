@@ -27,6 +27,33 @@
             android:layout_height="wrap_content"
             android:background="@color/navy"
             android:paddingLeft="5sp"
+            android:text="NIK                         :"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/txt_Nik"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="NIK"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
             android:text="Nama                     :"
             android:textColor="#FFFFFF"
             android:textStyle="bold"
@@ -54,19 +81,19 @@
             android:layout_height="wrap_content"
             android:background="@color/navy"
             android:paddingLeft="5sp"
-            android:text="Tempat, Tgl Lahir :"
+            android:text="Jenis Kelamin       :"
             android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txttempattgl"
+            android:id="@+id/txtJenisKelamin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@color/navy"
             android:paddingLeft="5sp"
-            android:text="Tempat tglLahir"
+            android:text="Jenis Kelamin"
             android:textColor="#FFFFFF"
             android:textSize="18sp" />
     </LinearLayout>
@@ -96,6 +123,60 @@
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             android:text="No Hp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Tempat, Lahir       :"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/txt_TempatLahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Tempat Lahir"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:text="Tanggal Lahir       :"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tx_TanggalLahir"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/navy"
+            android:paddingLeft="5sp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:text="Tanggal Lahir " />
     </LinearLayout>
 
     <LinearLayout

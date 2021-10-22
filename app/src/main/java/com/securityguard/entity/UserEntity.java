@@ -15,11 +15,16 @@ public class UserEntity implements Parcelable {
 
     @SerializedName("id")
     private long id;
-    //private long nik;
+    @SerializedName("nik")
+    private long nik;
     @SerializedName("nama")
     private String nama;
-    @SerializedName("ttl")
-    private String ttl;
+    @SerializedName("jenisKelamin")
+    private String jenisKelamin;
+    @SerializedName("tempatLahir")
+    private String tempatLahir;
+    @SerializedName("tanggalLahir")
+    private String tanggalLahir;
     @SerializedName("email")
     private String email;
     @SerializedName("noTelp")
@@ -46,8 +51,11 @@ public class UserEntity implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.id);
+        dest.writeLong(this.nik);
         dest.writeString(this.nama);
-        dest.writeString(this.ttl);
+        dest.writeString(this.jenisKelamin);
+        dest.writeString(this.tempatLahir);
+        dest.writeString(this.tanggalLahir);
         dest.writeString(this.email);
         dest.writeString(this.noTelp);
         dest.writeString(this.alamat);
@@ -58,8 +66,11 @@ public class UserEntity implements Parcelable {
 
     public void readFromParcel(Parcel source) {
         this.id = source.readLong();
+        this.nik = source.readLong();
         this.nama = source.readString();
-        this.ttl = source.readString();
+        this.jenisKelamin = source.readString();
+        this.tempatLahir = source.readString();
+        this.tanggalLahir = source.readString();
         this.email = source.readString();
         this.noTelp = source.readString();
         this.alamat = source.readString();
@@ -70,8 +81,11 @@ public class UserEntity implements Parcelable {
 
     protected UserEntity(Parcel in) {
         this.id = in.readLong();
+        this.nik = in.readLong();
         this.nama = in.readString();
-        this.ttl = in.readString();
+        this.jenisKelamin = in.readString();
+        this.tempatLahir = in.readString();
+        this.tanggalLahir = in.readString();
         this.email = in.readString();
         this.noTelp = in.readString();
         this.alamat = in.readString();

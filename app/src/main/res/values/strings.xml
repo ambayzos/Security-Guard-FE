@@ -7,4 +7,9 @@
     <string name="menu_logout">Logout</string>
     <string name="wrongpassword">password should be at least 8 character</string>
     <string name="passworisnotcorrect">password does not match</string>
+    <string name="jenisKelamin">Jenis Kelamin :</string>
+    <string-array name="gender">
+        <item>Laki-laki</item>
+        <item>Perempuan</item>
+    </string-array>
 </resources>

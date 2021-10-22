@@ -14,16 +14,19 @@ import java.io.UnsupportedEncodingException;
 public class DetailAccountActivity extends AppCompatActivity {
     //public static final String SET_OBJ = "set_obj";
     UserEntity userTemp;
-    TextView txnama, txttempattgllahir, txnoTel, txemail, txtAlamat;
+    TextView txNik, txnama, txJenisKelamin, txtNonerHp, txTempatLahir, txTanggalLahir, txemail, txtAlamat;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_account);
 
+         txNik = findViewById(R.id.txt_Nik);
          txnama = findViewById(R.id.txnama);
-         txttempattgllahir = findViewById(R.id.txttempattgl);
-         txnoTel = findViewById(R.id.noTel);
+         txJenisKelamin = findViewById(R.id.txtJenisKelamin);
+         txtNonerHp = findViewById(R.id.noTel);
+         txTempatLahir = findViewById(R.id.txt_TempatLahir);
+         txTanggalLahir = findViewById(R.id.tx_TanggalLahir);
          txemail = findViewById(R.id.txemail);
          txtAlamat = findViewById(R.id.txAlamat);
 
@@ -34,9 +37,12 @@ public class DetailAccountActivity extends AppCompatActivity {
         }catch (UnsupportedEncodingException e){
             e.printStackTrace();
         }
+        txNik.setText(Long.toString(userTemp.getNik()));
         txnama.setText(userTemp.getNama());
-        txttempattgllahir.setText(userTemp.getTtl());
-        txnoTel.setText(userTemp.getNoTelp());
+        txJenisKelamin.setText(userTemp.getJenisKelamin());
+        txtNonerHp.setText(userTemp.getNoTelp());
+        txTempatLahir.setText(userTemp.getTempatLahir());
+        txTanggalLahir.setText(userTemp.getTanggalLahir());
         txemail.setText(userTemp.getEmail());
         txtAlamat.setText(userTemp.getAlamat());
 

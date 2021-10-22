@@ -61,24 +61,56 @@
            app:layout_constraintStart_toStartOf="parent"
            app:layout_constraintTop_toBottomOf="@+id/imageView2"
            app:layout_constraintVertical_bias="0.123" />
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:gravity="center">
 
-       <EditText
-           android:id="@+id/txtTtl"
-           android:layout_width="307dp"
-           android:layout_height="48dp"
-           android:background="@drawable/round_brown"
-           android:drawableStart="@drawable/ic_date"
-           android:drawablePadding="20dp"
-           android:ems="10"
-           android:hint="Tempat Tanggal Lahir"
-           android:inputType="textPersonName"
-           android:paddingLeft="10sp"
-           android:textColorHint="#FFFFFF"
-           app:layout_constraintBottom_toBottomOf="parent"
-           app:layout_constraintEnd_toEndOf="parent"
-           app:layout_constraintStart_toStartOf="parent"
-           app:layout_constraintTop_toBottomOf="@+id/imageView2"
-           app:layout_constraintVertical_bias="0.241" />
+           <Spinner
+               android:id="@+id/spnGender"
+               android:layout_width="307dp"
+               android:layout_height="48dp"
+               android:background="@drawable/round_brown"
+               android:textColorHint="#FFFFFF"
+               android:entries="@array/gender" />
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:gravity="center"
+           android:orientation="horizontal">
+
+           <EditText
+               android:id="@+id/txtTempatlahir"
+               android:layout_width="153dp"
+               android:layout_height="48dp"
+               android:background="@drawable/round_brown"
+               android:drawableStart="@drawable/ic_location"
+               android:hint="Tempat Lahir"
+               android:inputType="textPersonName"
+               android:paddingLeft="10sp"
+               android:textColorHint="#FFFFFF" />
+
+           <EditText
+               android:id="@+id/txtTtl"
+               android:layout_width="153dp"
+               android:layout_height="48dp"
+               android:background="@drawable/round_brown"
+               android:drawableStart="@drawable/ic_date"
+               android:ems="10"
+               android:hint="Tanggal Lahir"
+               android:inputType="textPersonName"
+               android:paddingLeft="10sp"
+               android:textColorHint="#FFFFFF"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@+id/imageView2"
+               app:layout_constraintVertical_bias="0.241" />
+
+       </LinearLayout>
 
        <EditText
            android:id="@+id/txtEmailLogin"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
@@ -29,7 +30,8 @@ import retrofit2.Response;
 
 public class RegistrasiActivity extends AppCompatActivity {
 
-    EditText txtNik,txtNama, txtTtl, txtEmail, txtNoTelp, txtAlamat, txtPass, txtRepass;
+    EditText txtNik,txtNama, txtTtl, txtEmail, txtNoTelp, txtAlamat, txtPass, txtRepass, txtTempatLahir;
+    Spinner spnGender;
     Button btnDaftar;
     AwesomeValidation awesomeValidation;
 
@@ -37,8 +39,10 @@ public class RegistrasiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrasi);
-        //txtNik = findViewById(R.id.txtNik);
+        txtNik = findViewById(R.id.txtNik);
         txtNama = findViewById(R.id.txtNama);
+        spnGender = findViewById(R.id.spnGender);
+        txtTempatLahir = findViewById(R.id.txtTempatlahir);
         txtTtl = findViewById(R.id.txtTtl);
         txtEmail = findViewById(R.id.txtEmailLogin);
         txtNoTelp = findViewById(R.id.txtNotelp);
@@ -55,10 +59,11 @@ public class RegistrasiActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 UserEntity user = new UserEntity();
-//                user.setNik(Long.parseLong(txtNik.getText().toString()));
-
+                user.setNik(Long.parseLong(txtNik.getText().toString()));
                 user.setNama(txtNama.getText().toString());
-                user.setTtl(txtTtl.getText().toString());
+                user.setJenisKelamin(spnGender.getSelectedItem().toString());
+                user.setTempatLahir(txtTempatLahir.getText().toString());
+                user.setTanggalLahir(txtTtl.getText().toString());
                 user.setEmail(txtEmail.getText().toString());
                 user.setNoTelp(txtNoTelp.getText().toString());
                 user.setAlamat(txtAlamat.getText().toString());
