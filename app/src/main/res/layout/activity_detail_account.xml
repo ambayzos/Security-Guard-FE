@@ -33,7 +33,7 @@
             android:textSize="18sp" />
 
         <TextView
-            android:id="@+id/txtnama"
+            android:id="@+id/txnama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

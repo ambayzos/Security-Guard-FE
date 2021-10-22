@@ -12,7 +12,7 @@ import com.securityguard.utility.JWTUtil;
 import java.io.UnsupportedEncodingException;
 
 public class DetailAccountActivity extends AppCompatActivity {
-    public static final String SET_OBJ = "set_obj";
+    //public static final String SET_OBJ = "set_obj";
     UserEntity userTemp;
     TextView txnama, txttempattgllahir, txnoTel, txemail, txtAlamat;
 

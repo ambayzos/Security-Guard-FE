@@ -25,7 +25,7 @@ import java.io.UnsupportedEncodingException;
 public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     UserEntity userTemp;
     String token;
-    Button btnMenu,btnCallPolice;
+    Button btnMenu,btnCallPolice, btnFriends;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         setContentView(R.layout.activity_main);
         btnMenu = findViewById(R.id.btnMenu);
         btnCallPolice = findViewById(R.id.btnCall);
+        btnFriends = findViewById(R.id.btnTeman);
 
         // tokenJwt = "Bearer "+getIntent().getStringExtra("token");
         token = getIntent().getStringExtra("token");
@@ -67,6 +68,14 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             }
         });
 
+        btnFriends.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intenFriend = new Intent(MainActivity.this, FriendActivity.class);
+                startActivity(intenFriend);
+            }
+        });
+
     }
 
     @Override
@@ -74,7 +83,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         Toast.makeText(this, "Selected Item: " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
         switch (menuItem.getItemId()) {
             case R.id.menu_account:
-                Intent inten = new Intent(MainActivity.this, DetailAccountActivity.class);
+                Intent inten = new Intent(this, DetailAccountActivity.class);
                 inten.putExtra("token", token);
                 startActivity(inten);
                 return true;
