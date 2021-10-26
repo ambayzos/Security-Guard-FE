@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             @Override
             public void onClick(View v) {
                 Intent intenFriend = new Intent(MainActivity.this, FriendActivity.class);
+                intenFriend.putExtra("token", token);
                 startActivity(intenFriend);
             }
         });

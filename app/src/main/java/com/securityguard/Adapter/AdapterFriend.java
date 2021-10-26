@@ -1,5 +1,6 @@
 package com.securityguard.Adapter;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,22 @@ import java.util.ArrayList;
 public class AdapterFriend extends RecyclerView.Adapter<AdapterFriend.ViewHolder> {
 
     private ArrayList<UserEntity> listViewFriends;
+    private Context context;
+
+    public AdapterFriend(ArrayList<UserEntity> listViewFriends, Context context) {
+        this.listViewFriends = listViewFriends;
+        this.context = context;
+    }
+
+
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friends, parent, false);
-        return new ViewHolder(view);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.item_list_friends, parent, false);
+//        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_list_friends, parent, false);
+        return new AdapterFriend.ViewHolder(view);
     }
 
     @Override
@@ -33,7 +45,7 @@ public class AdapterFriend extends RecyclerView.Adapter<AdapterFriend.ViewHolder
 
     @Override
     public int getItemCount() {
-        return listViewFriends.size();
+        return (listViewFriends != null) ? listViewFriends.size() : 0;
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
